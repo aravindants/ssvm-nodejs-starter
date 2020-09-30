@@ -1,19 +1,22 @@
-const { say } = require('../pkg/ssvm_nodejs_starter_lib.js');
+const { convert } = require('../pkg/ssvm_nodejs_starter_lib.js');
+const { argv } = require('yargs')
 
-const http = require('http');
-const url = require('url');
-const hostname = '0.0.0.0';
-const port = 3000;
-
-const server = http.createServer((req, res) => {
-  const queryObject = url.parse(req.url,true).query;
-  if (!queryObject['name']) {
-    res.end(`Please use command curl http://${hostname}:${port}/?name=MyName \n`);
+if (argv.to == "arabic") {
+  if (typeof (argv.value) == "string") {
+    console.log(convert(String(argv.value), argv.to))
   } else {
-    res.end(say(queryObject['name']) + '\n');
+    console.log(argv.value + " is a " + typeof (argv.value))
+    console.log("For roman numeral->arabic conversion, use --value=[String] eg. XX along with --to=arabic")
   }
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+}
+else if (argv.to == "roman") {
+  if (Number.isInteger(argv.value)) {
+    console.log(convert(String(argv.value), argv.to))
+  } else {
+    console.log(argv.value + " is a " + typeof (argv.value))
+    console.log("For arabic numeral->roman conversion, use --value=[Integer] eg. 20 along with --to=roman")
+  }
+}
+else {
+  console.log(" RUN WITH:\n --value=[the value in roman or arabic format]\n --to=[arabic||roman]")
+}
