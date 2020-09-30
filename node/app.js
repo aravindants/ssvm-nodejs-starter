@@ -11,7 +11,11 @@ if (argv.to == "arabic") {
 }
 else if (argv.to == "roman") {
   if (Number.isInteger(argv.value)) {
-    console.log(convert(String(argv.value), argv.to))
+    if (argv.value < 4000) {
+      console.log(convert(String(argv.value), argv.to))
+    } else {
+      console.log(`Only arabic integers less than 4000 are supported for now`)
+    }
   } else {
     console.log(argv.value + " is a " + typeof (argv.value))
     console.log("For arabic numeral->roman conversion, use --value=[Integer] eg. 20 along with --to=roman")
