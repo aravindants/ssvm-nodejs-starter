@@ -1,0 +1,26 @@
+{
+  "name": "xxto20",
+  "version": "1.0.0",
+  "description": "This is a simple command line utility for conversion between arabic and roman numerals.",
+  "main": "node/app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "yargs": "^16.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aravindants/ssvm-nodejs-starter.git"
+  },
+  "author": "Aravindan TS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aravindants/ssvm-nodejs-starter/issues"
+  },
+  "homepage": "https://github.com/aravindants/ssvm-nodejs-starter#readme"
+}
