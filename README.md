@@ -5,6 +5,7 @@ This is made as a part of : [Second State Raspberry Pi Kit-Wave 2](https://www.s
 
 * The Rust functions are in the `src` directory. You can put high performance workload into Rust functions.
 * The JavaScript functions are in the `node` directory and they can access the Rust functions.
+* Add the yargs package before running `npm add yargs`.
 * Use the `node node/app` command for help.
 * Using `node node/app --value=XX --to=arabic` will print `20`.
 * Using `node node/app --value=20 --to=roman` will print `XX`.
@@ -17,6 +18,7 @@ $ docker pull secondstate/ssvm-nodejs-starter:v1
 $ docker run -p 3000:3000 --rm -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1
 (docker) # cd /app
 (docker) # ssvmup build
+(docker) # npm add yargs
 (docker) # node node/app.js
 ```
 
